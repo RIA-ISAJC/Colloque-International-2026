@@ -868,6 +868,7 @@ const STR_TR = {
   'Séance plénière finale':{en:'Closing plenary session', ar:'الجلسة العامة الختامية', es:'Sesión plenaria final'},
   '3 intervenants (15 min)':{en:'3 speakers (15 min)', ar:'3 متدخلين (15 دقيقة)', es:'3 ponentes (15 min)'},
   'Discussion et recommandations collectives':{en:'Discussion and collective recommendations', ar:'نقاش وتوصيات جماعية', es:'Debate y recomendaciones colectivas'},
+  'Séance plénière finale (suite)':{en:'Closing plenary session (continued)', ar:'الجلسة العامة الختامية (تتمة)', es:'Sesión plenaria final (continuación)'},
   'Discussion générale':{en:'General discussion', ar:'نقاش عام', es:'Debate general'},
   'Synthèse des axes de travail et recommandations':{en:'Summary of the working themes and recommendations', ar:'توليف محاور العمل والتوصيات', es:'Síntesis de los ejes de trabajo y recomendaciones'},
   '1 rapporteur par axe':{en:'1 rapporteur per theme', ar:'مقرر واحد لكل محور', es:'1 relator/a por eje'},
@@ -943,9 +944,9 @@ const AXES = {
   axe2:{label:'Axe 2', theme:'IA et innovation technologique', room:'Salle des conférences', c:'var(--axe2)'},
   axe3:{label:'Axe 3', theme:'Citoyenneté active', room:'Salle de Doctorat', c:'var(--axe3)'},
   axe4:{label:'Axe 4', theme:'Réduction des inégalités sociales', room:'la Bibliothèque', c:'var(--axe4)'},
-  atelier1:{label:'Atelier 1', theme:"Du dispositif pédagogique « Visage Pluriel » aux expériences écoesthétiques", room:'Salle 30 polyvalente', c:'var(--atelier)'},
+  atelier1:{label:'Atelier 1', theme:"Création artistique", room:'Salle 30 polyvalente', c:'var(--atelier)'},
   atelier2:{label:'Atelier 2', theme:"Formation doctorale", room:'Salle 30 polyvalente', c:'var(--atelier)'},
-  atelier3:{label:'Atelier 3', theme:"Création artistique", room:'Salle 30 polyvalente', c:'var(--atelier)'}
+  atelier3:{label:'Atelier 3', theme:"Grassroots Movements and Sociocultural Animation", room:'Salle 30 polyvalente', c:'var(--atelier)'}
 };
 
 function S(time,speaker,flag,title,rtl){ return {time,speaker,flag,title,rtl:!!rtl}; }
@@ -966,7 +967,7 @@ const DAYS = [
     {time:'11h00–13h00', title:'Séance plénière inaugurale', items:[
       'Yassine Karamti — professeur, Tunisie : « Statut et durabilité institutionnelle des animateurs culturels en Tunisie (2012-2017) : notes socio-juridiques au miroir des ODD (4, 8 et 16) »',
       'Pascal Tozzi — professeur, président RIA, France',
-      'Anouar Yahya — directeur général de la jeunesse, Tunisie',
+      'Mehdi Mabrouk — Tunisie',
       'Tarchouni Seifalla — directeur général de la Cité de la Culture, Tunis, Tunisie',
       'Discussion générale (30 min)'
     ]},
@@ -976,7 +977,7 @@ const DAYS = [
     { time:'14h30 – 16h30', label:"Sessions parallèles + Atelier 1", tracks:{
       axe1:[
         S('14h30–14h45','Christian Cecile','Guyane, France',"L'école ouverte : l'expression d'une coéducation adaptée au territoire : le cas de Marie-Galante, espace insulaire des Petites Antilles"),
-        S('14h45–15h00','Johannes Küng','Suisse','Challenges in and Approaches to Community Engagement in Sociocultural and Socioecological Grass-Roots Initiatives — insights from Nepal and Uganda'),
+        S('14h45–15h00','Johannes Küng','Suisse','Always Somewhere: Communities of Interest, Communities of Place, and the Promise of Sociocultural Animation'),
         S('15h00–15h15','Chiheb Nasri','Tunisie',"Du patrimoine tacite au capital circulaire : l'animation socioculturelle comme moteur de la « co-création éthique » pour la valorisation des filières artisanales éco-responsables en Tunisie"),
         S('15h15–15h30','Nadhir Bel Hadj Rhouma','Tunisie','فنون العرض بين التنشيط السوسيوثقافي و التنمية المستدامة', true),
         S('15h30–15h45','Hafdaoui Saad','Tunisie','أزمة التنمية المستدامة في مجتمعنا التونسي وإشكالية المشاريع التنموية المعطلة والأيادي العمّالية المسرّحة — وكالات الإشهار بالقطاع السياحي مثالا', true),
@@ -986,7 +987,6 @@ const DAYS = [
       ],
       axe2:[
         S('14h30–14h45','Adel Ben Hassine','Tunisie','Intelligence artificielle et animation socioculturelle : vers une médiation augmentée et inclusive des communautés'),
-        S('14h45–15h00','Zina Achour','Algérie',"Animation socioculturelle en Algérie : associations locales et citoyenneté active (étude de deux cas : « Association Collecteurs de Bonheur » et « Association Hapkido d'Aokas »)"),
         S('15h00–15h15','Jamila El Guédri','Tunisie',"Usages pédagogiques de l'intelligence artificielle générative : stratégies d'adaptation aux interactions interculturelles"),
         S('15h15–15h30','Sameh Mhamdi','Tunisie','التنشيط السوسيوثقافي الرقمي: توظيف أدوات الذكاء الاصطناعي في بناء مجتمعات محلية مستدامة عبر الممارسة الثقافية', true),
         S('15h30–15h45','Younes El Jaouhari','Maroc',"À l'ère de l'IA, miser sur l'humain : utiliser le virtuel pour favoriser l'épanouissement des jeunes"),
@@ -996,8 +996,7 @@ const DAYS = [
         S('14h30–14h45','El Hilali Bader','Maroc','المدرسة والتنشئة الثقافية: المسرح المدرسي كوسيط سوسيو-ثقافي: دراسة حالة للأندية الثقافية', true),
         S('14h45–15h00','Faress Zouari','Tunisie','الممارسات والتدخلات السوسيوثقافية للوسيط الثقافي ودورها في ترسيخ قيم المواطنة المجتمعية', true),
         S('15h00–15h15','Hacene Aali','Algérie','التنشيط الثقافي والاجتماعي وصناعة المواطنة', true),
-        S('15h15–15h30','Hatem Zeer','Tunisie','التنشيط الاجتماعي الثقافي ورهانات الذكاء الاصطناعي: دراسة ميدانية في صناعة المحتوى الهادف — راديو واب والتلفزة واب وبودكاست، من الشغف إلى الإنتاج', true),
-        S('15h30–15h45','Discussion et échanges','','')
+        S('15h15–15h30','Discussion et échanges','','')
       ],
       axe4:[
         S('14h30–14h45','Pierre Etienne','Belgique','Contextual expertise in service of collaborative action research in the South Ubangi Province of the DRC'),
@@ -1009,7 +1008,7 @@ const DAYS = [
         S('16h00–16h15','Zaher Nkhili','Tunisie','التنشيط الثقافي في المسارح الأثرية بين دمقرطة الثقافة والتمايز الاجتماعي: المهرجان الدولي للموسيقى السيمفونية بالجم نموذجًا', true),
         S('16h15–16h30','Discussion et échanges','','')
       ],
-      atelier1:[ S('14h30–16h00','Pr. Jean-Marie Lafortune','Canada',"Du dispositif pédagogique « Visage Pluriel » aux expériences écoesthétiques : expérimentation de l'art comme vecteur d'inclusion socioculturelle et d'engagement écologique (Université du Québec à Montréal ; Université Mohammed V de Rabat)") ]
+      atelier1:[ S('14h30–16h30','Dr. Kréaa Mehdi, Dr. Nadhir Belhaj Rhouma, Dr. Ines Elfidha','Tunisie',"Terre d'empreinte, Souffle d'avenir") ]
     }}
   ]
 },
@@ -1018,8 +1017,8 @@ const DAYS = [
   simple:[
     {time:'09h00–11h00', title:'Deuxième séance plénière', items:[
       'Youssef Ben Othman — directeur CERES, Tunisie',
-      'Aïcha Boukrissa — professeure, Algérie : « Réinventer l\'éducation populaire par le prisme des mutations sociales : une organisation systémique entre facteurs économiques, capital humain et liberté d\'expression »',
-      'Ibrahim Jadla — professeur émérite, Tunisie',
+      'Aïcha Boukhrissa — professeure, Algérie : « Réinventer l\'éducation populaire par le prisme des mutations sociales : une organisation systémique entre facteurs économiques, capital humain et liberté d\'expression »',
+      'Brahim Jadla — professeur émérite, Tunisie : « Les hommes de dialogue en Méditerranée : médiation et partage de savoirs »',
       'Mongi Zidi — professeur, ISAJC, Tunisie',
       'Débat collectif (30 min)'
     ]},
@@ -1028,11 +1027,10 @@ const DAYS = [
   parallels:[
     { time:'11h30 – 13h00', label:"Sessions parallèles + Atelier 2", tracks:{
       axe1:[
-        S('11h30–11h45','Daria Vinogradova','Belgique',"Nature sans humain ? Comment repenser la médiation pour la préservation de l'environnement"),
-        S('11h45–12h00','Silvère Ackermann*','Suisse','En route vers le développement durable'),
-        S('12h00–12h15','Anne Jetzer','Suisse',"Du geste artistique au geste écologique : l'expérience « Mer plastique »"),
-        S('12h15–12h30','Ines Touir','Tunisie','التدريس التشاركي كأداة للتنشيط الاجتماعي-ثقافي: تجربة ريادية في إنتاج المحتوى العلمي وتمكين طلبة التنشيط الشبابي', true),
-        S('12h30–12h45','Discussion et échanges','','')
+        S('11h30–11h45','Silvère Ackermann*','Suisse','En route vers le développement durable'),
+        S('11h45–12h00','Anne Jetzer','Suisse',"Du geste artistique au geste écologique : l'expérience « Mer plastique »"),
+        S('12h00–12h15','Ines Touir','Tunisie','التدريس التشاركي كأداة للتنشيط الاجتماعي-ثقافي: تجربة ريادية في إنتاج المحتوى العلمي وتمكين طلبة التنشيط الشبابي', true),
+        S('12h15–12h30','Discussion et échanges','','')
       ],
       axe2:[
         S('11h30–11h45','Abed Tilioua','Algérie',"La place du numérique dans le projet associatif : étude comparative du Croissant Rouge algérien et de l'association environnementale NEMLA de Béjaïa (Algérie)"),
@@ -1057,7 +1055,7 @@ const DAYS = [
     { time:'14h30 – 16h30', label:"Sessions parallèles + Atelier 3", tracks:{
       axe1:[
         S('14h30–14h45','Yuri Tironi','Suisse',"Comment sont intégrés et travaillés les ODD dans la formation en travail social et animation socioculturelle en Suisse ?"),
-        S('14h45–15h00','Zimmermann Dominic','Suisse',"Animation socioculturelle et adaptation climatique dans les communes alpines : enjeux de processus participatifs en contexte d'incertitude"),
+        S('14h45–15h00','Zimmermann Dominic','Suisse',"Animation socioculturelle et adaptation climatique dans les communes alpines : processus communautaires et participation en contexte d'incertitude"),
         S('15h00–15h15','Faten Raboudi','Tunisie',"Assessing the Impact of Animation, Mediation, and Education on Pupils' Sustainable Food Behavior"),
         S('15h15–15h30','Séverine Pedraza','Suisse',"Un magasin gratuit dans le centre de quartier : une expérimentation"),
         S('15h30–15h45','Imen Samet Arous','Tunisie',"Les spectacles de carnaval comme dispositifs d'animation socioculturelle au service du développement durable : entre citoyenneté active, imaginaires écologiques et inclusion sociale"),
@@ -1083,7 +1081,7 @@ const DAYS = [
         S('15h30–15h45','Mohamed Salah Arous','Tunisie','إحياء الحكايات الشعبية عبر التنشيط المسرحي للأطفال: مقاربة سوسيوثقافية لحكاية «وردة وياسمين» من التراث القرقني', true),
         S('15h45–16h00','Discussion et échanges','','')
       ],
-      atelier3:[ S('14h30–16h00','Dr. Kréaa Mehdi, Dr. Nadhir Belhaj Rhouma, Dr. Ines Elfidha','Tunisie',"Terre d'empreinte, Souffle d'avenir") ]
+      atelier3:[ S('14h30–16h30','Facilitateur : Johannes Küng · Animateur in situ : Enock Jowel Nionzima · Animatrice (en ligne) : Pranita Chettri','Suisse · Ouganda · Suisse',"Grassroots Movements and Sociocultural Animation: Fostering Active Citizenship through Participatory Action") ]
     }}
   ],
   closing:[
@@ -1102,24 +1100,21 @@ const DAYS = [
         {nom:"Ben Mellassa",prenom:"Rim",pays:"Tunisie",titre:"الوساطة الثقافية والتنشيط السوسيوثقافي: رهانات التمكين والإدماج",rtl:true},
         {nom:"Trabesi",prenom:"Latifa",pays:"Tunisie",titre:"La sonothérapie comme dispositif d'animation socioculturelle durable : effets sur le bien-être et la cohésion sociale des femmes",rtl:false},
         {nom:"Sassi",prenom:"Wejden",pays:"Tunisie",titre:"من الأداء الحيّ إلى التوثيق الرّقمي: تحوّلات غناء «الأديب» في السياق التكنولوجي",rtl:true},
-        {nom:"Ghani",prenom:"Asma",pays:"Tunisie",titre:"",rtl:false},
-        {nom:"Khaskhoussi",prenom:"Hadhil",pays:"Tunisie",titre:"",rtl:false},
-        {nom:"Elfidha",prenom:"Ines",pays:"Tunisie",titre:"La mémoire en signes : langage décoratif et construction identitaire dans la poterie traditionnelle",rtl:false},
-        {nom:"Abderrazek",prenom:"Nabil",pays:"Tunisie",titre:"",rtl:false},
-        {nom:"Villageois",prenom:"Chantal",pays:"Martinique",titre:"Animation socioculturelle, IA et innovation technologique : réinventer les pratiques sans perdre l'humain",rtl:false},
-        {nom:"Bizon",prenom:"Marie-Ange",pays:"Martinique",titre:"L'intelligence artificielle au service de l'accompagnement à la VAE : innovation, personnalisation et éthique",rtl:false},
-        {nom:"Monette",prenom:"Clérence",pays:"Martinique",titre:"Animation socioculturelle, intelligence artificielle et innovation technologique : de nouveaux outils au service des pratiques éducatives",rtl:false},
+        {nom:"Ghanmi",prenom:"Asma",pays:"Tunisie",titre:"",rtl:false},
+        {nom:"Khaskhoussi",prenom:"Hadil",pays:"Tunisie",titre:"",rtl:false},
+        {nom:"Elfidha",prenom:"Ines",pays:"Tunisie",titre:"La mémoire en signes : langage décoratif et construction identitaire dans la poterie traditionnelle de Sejnane",rtl:false},
         {nom:"Zeer",prenom:"Hatem",pays:"Tunisie",titre:"التنشيط الاجتماعي الثقافي ورهانات الذكاء الاصطناعي: دراسة ميدانية في صناعة المحتوى الهادف — راديو واب والتلفزة واب وبودكاست، من الشغف إلى الإنتاج",rtl:true}
     ]},
     {time:'10h20–11h00', title:'Séance plénière finale', items:[
-      'Jean-Marie Lafortune — professeur, Canada : « Faire vivre des expériences écoesthétiques pour propulser la transition socio-écologique »',
-      'Mohamed Habib Khadhraoui — docteur, Tunisie : « Storyline et Animation Culturelle، بناء وتحليل ممارسة تنشيطية »',
-      'Abdessatar Rejeb — professeur, Tunisie : « Animation socioculturelle, enjeux pragmatiques et limites scientifiques »',
-      "Directrice de l'École des Hautes Études de Tourisme, Carthage, Tunisie",
-      'Luc Greffier — professeur, France'
+      '10h20–10h45 (25 min) · Jean-Marie Lafortune — professeur, Canada : « Faire vivre des expériences écoesthétiques pour propulser la transition socio-écologique »',
+      '10h45–11h00 (15 min) · Mohamed Habib Khadhraoui — docteur, Tunisie : « Storyline et Animation Culturelle، بناء وتحليل ممارسة تنشيطية »'
     ]},
     {time:'11h00–11h30', title:'Pause-café', lunch:true},
-    {time:'11h30–12h30', title:'Discussion générale'},
+    {time:'11h30–12h10', title:'Séance plénière finale (suite)', items:[
+      '11h30–11h45 (15 min) · Abdessatar Rejeb — professeur, Tunisie : « Animation socioculturelle, enjeux pragmatiques et limites scientifiques »',
+      '11h45–12h10 (25 min) · Luc Greffier — professeur, France : « Animation et transition au filtre des équipements sociaux culturels en France (Nouvelle-Aquitaine) »'
+    ]},
+    {time:'12h10–12h30', title:'Discussion générale'},
     {time:'12h30–13h15', title:'Synthèse des axes de travail et recommandations', items:[
       '1 rapporteur par axe',
       'Axe 1 — Culture, écologie et développement durable',
