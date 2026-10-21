@@ -293,6 +293,9 @@
     margin:-8px 0 14px;padding:6px 10px;background:rgba(0,0,0,.03);border-radius:8px;
   }
   .chair-line em{font-style:italic;opacity:.75;}
+  .chair-line strong{font-weight:700;color:var(--ink);}
+  .mod-line{font-size:14px;color:var(--ink-soft);margin:2px 0 8px;}
+  .mod-line strong{color:var(--ink);font-weight:700;}
 
   /* practical info */
   .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
@@ -884,6 +887,7 @@ const STR_TR = {
   'Sessions parallèles + Atelier 2':{en:'Parallel sessions + Workshop 2', ar:'جلسات موازية + الورشة 2', es:'Sesiones paralelas + Taller 2'},
   'Sessions parallèles + Atelier 3':{en:'Parallel sessions + Workshop 3', ar:'جلسات موازية + الورشة 3', es:'Sesiones paralelas + Taller 3'},
   'Sessions parallèles':{en:'Parallel sessions', ar:'جلسات موازية', es:'Sesiones paralelas'},
+  'Modération':{en:'Moderator', ar:'تسيير الجلسة', es:'Moderación'},
   'Président':{en:'Chair', ar:'رئيس الجلسة', es:'Presidente/a'},
   'Animateur / Médiateur':{en:'Facilitator / Mediator', ar:'منشّط/ة - وسيط/ة', es:'Animador/a - Mediador/a'},
   'à annoncer':{en:'to be announced', ar:'سيُعلن لاحقًا', es:'por anunciar'}
@@ -964,7 +968,7 @@ const DAYS = [
       "Message d'organisation — Khaled Khanchouch"
     ]},
     {time:'10h30–11h00', title:'Pause-café', lunch:true},
-    {time:'11h00–13h00', title:'Séance plénière inaugurale', items:[
+    {time:'11h00–13h00', title:'Séance plénière inaugurale', mod:'GREFFIER Luc', items:[
       'Yassine Karamti — professeur, Tunisie : « Statut et durabilité institutionnelle des animateurs culturels en Tunisie (2012-2017) : notes socio-juridiques au miroir des ODD (4, 8 et 16) »',
       'Pascal Tozzi — professeur, président RIA, France',
       'Mehdi Mabrouk — Tunisie',
@@ -974,7 +978,7 @@ const DAYS = [
     {time:'13h00–14h30', title:'Déjeuner sur site', lunch:true}
   ],
   parallels:[
-    { time:'14h30 – 16h30', label:"Sessions parallèles + Atelier 1", tracks:{
+    { time:'14h30 – 16h30', label:"Sessions parallèles + Atelier 1", mods:{axe1:"RABOUDI Faten",axe2:"MABROUKI Mongi",axe3:"KHADHRAOUI Mohamed Habib",axe4:"BOUKHRISSA Aïcha"}, tracks:{
       axe1:[
         S('14h30–14h45','Christian Cecile','Guyane, France',"L'école ouverte : l'expression d'une coéducation adaptée au territoire : le cas de Marie-Galante, espace insulaire des Petites Antilles"),
         S('14h45–15h00','Johannes Küng','Suisse','Always Somewhere: Communities of Interest, Communities of Place, and the Promise of Sociocultural Animation'),
@@ -1015,7 +1019,7 @@ const DAYS = [
 {
   id:'j2', label:'Jour 2 · Mer. 28/10', dateLabel:'Mercredi 28 octobre 2026',
   simple:[
-    {time:'09h00–11h00', title:'Deuxième séance plénière', items:[
+    {time:'09h00–11h00', title:'Deuxième séance plénière', mod:'LAFORTUNE Jean-Marie', items:[
       'Youssef Ben Othman — directeur CERES, Tunisie',
       'Aïcha Boukhrissa — professeure, Algérie : « Réinventer l\'éducation populaire par le prisme des mutations sociales : une organisation systémique entre facteurs économiques, capital humain et liberté d\'expression »',
       'Brahim Jadla — professeur émérite, Tunisie : « Les hommes de dialogue en Méditerranée : médiation et partage de savoirs »',
@@ -1025,7 +1029,7 @@ const DAYS = [
     {time:'11h00–11h30', title:'Pause-café', lunch:true},
   ],
   parallels:[
-    { time:'11h30 – 13h00', label:"Sessions parallèles + Atelier 2", tracks:{
+    { time:'11h30 – 13h00', label:"Sessions parallèles + Atelier 2", mods:{axe1:"REJEB Abdessatar",axe2:"BEN HASSINE Adel",axe3:"BEDRINE Amel",axe4:"KARAMTI Yassine"}, tracks:{
       axe1:[
         S('11h30–11h45','Silvère Ackermann*','Suisse','En route vers le développement durable'),
         S('11h45–12h00','Anne Jetzer','Suisse',"Du geste artistique au geste écologique : l'expérience « Mer plastique »"),
@@ -1052,7 +1056,7 @@ const DAYS = [
       atelier2:[ S('11h30–13h00','Pr. Yassine Karamti, Pr. Ibtissem Weslati','Tunisie',"Formation doctorale") ]
     }},
     { time:'13h00 – 14h30', label:'Déjeuner sur site', lunch:true, tracks:null },
-    { time:'14h30 – 16h30', label:"Sessions parallèles + Atelier 3", tracks:{
+    { time:'14h30 – 16h30', label:"Sessions parallèles + Atelier 3", mods:{axe1:"NAMOUCHI Imen",axe2:"TEMANNI Mondher",axe3:"GHARBI Rached",axe4:"TOZZI Pascal"}, tracks:{
       axe1:[
         S('14h30–14h45','Yuri Tironi','Suisse',"Comment sont intégrés et travaillés les ODD dans la formation en travail social et animation socioculturelle en Suisse ?"),
         S('14h45–15h00','Zimmermann Dominic','Suisse',"Animation socioculturelle et adaptation climatique dans les communes alpines : processus communautaires et participation en contexte d'incertitude"),
@@ -1091,7 +1095,7 @@ const DAYS = [
 {
   id:'j3', label:'Jour 3 · Jeu. 29/10', dateLabel:'Jeudi 29 octobre 2026',
   simple:[
-    {time:'09h00–10h20', title:'Présentation des posters par axes de travail', items:[
+    {time:'09h00–10h20', title:'Présentation des posters par axes de travail', mod:'WESLATI Ibtissem', items:[
       '1 chercheur·euse par axe : 5 à 10 minutes'
     ], posters:[
         {nom:"Mhidhi",prenom:"Rahma",pays:"Tunisie",titre:"التراث الغابي بعين دراهم رافد للتنمية المستدامة ودور التنشيط السوسيوثقافي في تعزيز الهوية وتحقيق التنمية المحلية",rtl:true},
@@ -1105,12 +1109,12 @@ const DAYS = [
         {nom:"Elfidha",prenom:"Ines",pays:"Tunisie",titre:"La mémoire en signes : langage décoratif et construction identitaire dans la poterie traditionnelle de Sejnane",rtl:false},
         {nom:"Zeer",prenom:"Hatem",pays:"Tunisie",titre:"التنشيط الاجتماعي الثقافي ورهانات الذكاء الاصطناعي: دراسة ميدانية في صناعة المحتوى الهادف — راديو واب والتلفزة واب وبودكاست، من الشغف إلى الإنتاج",rtl:true}
     ]},
-    {time:'10h20–11h00', title:'Séance plénière finale', items:[
+    {time:'10h20–11h00', title:'Séance plénière finale', mod:'BEN HASSINE Adel', items:[
       '10h20–10h45 (25 min) · Jean-Marie Lafortune — professeur, Canada : « Faire vivre des expériences écoesthétiques pour propulser la transition socio-écologique »',
       '10h45–11h00 (15 min) · Mohamed Habib Khadhraoui — docteur, Tunisie : « Storyline et Animation Culturelle، بناء وتحليل ممارسة تنشيطية »'
     ]},
     {time:'11h00–11h30', title:'Pause-café', lunch:true},
-    {time:'11h30–12h10', title:'Séance plénière finale (suite)', items:[
+    {time:'11h30–12h10', title:'Séance plénière finale (suite)', mod:'BEN HASSINE Adel', items:[
       '11h30–11h45 (15 min) · Abdessatar Rejeb — professeur, Tunisie : « Animation socioculturelle, enjeux pragmatiques et limites scientifiques »',
       '11h45–12h10 (25 min) · Luc Greffier — professeur, France : « Animation et transition au filtre des équipements sociaux culturels en France (Nouvelle-Aquitaine) »'
     ]},
@@ -1167,6 +1171,7 @@ function renderDays(){
       html += `<div class="block"><div class="block-simple ${b.lunch?'lunch':''} ${b.gala?'gala':''}">
         <div class="time mono">${b.time}</div>
         <div><div class="title">${t(b.title)}</div>
+        ${b.mod?`<div class="mod-line">${t('Modération')} : <strong>${b.mod}</strong></div>`:''}
         ${b.items?`<ul>${b.items.map(it=>`<li>${t(it)}</li>`).join('')}</ul>`:''}
         ${b.posters?renderPosterTable(b.posters):''}
         </div></div></div>`;
@@ -1189,7 +1194,8 @@ function renderDays(){
         const a = AXES[axeId];
         html += `<div class="track-panel ${ti===0?'active':''}" id="track-${panelId}-${axeId}">`;
         html += `<div class="room-line" style="grid-column:1/-1">${roomSVG}<span>${t(a.room)}</span><span style="opacity:.6">· ${t(a.theme)}</span></div>`;
-        html += `<div class="chair-line" style="grid-column:1/-1"><span>${t('Président')} : <em>${t('à annoncer')}</em></span><span>·</span><span>${t('Animateur / Médiateur')} : <em>${t('à annoncer')}</em></span></div>`;
+        const modName = p.mods && p.mods[axeId];
+        html += `<div class="chair-line" style="grid-column:1/-1"><span>${modName?`${t('Modération')} : <strong>${modName}</strong>`:`${t('Président')} : <em>${t('à annoncer')}</em>`}</span><span>·</span><span>${t('Animateur / Médiateur')} : <em>${t('à annoncer')}</em></span></div>`;
         html += sessions.map(s=>`
           <div class="session-card" style="--c:${a.c}" data-search="${(s.speaker+' '+s.flag+' '+s.title).toLowerCase()}" data-day="${t(d.dateLabel)}">
             <div class="row1"><span class="speaker">${s.speaker}</span><span class="time">${s.time}</span></div>
@@ -1204,6 +1210,7 @@ function renderDays(){
       html += `<div class="block"><div class="block-simple ${b.lunch?'lunch':''} ${b.gala?'gala':''}">
         <div class="time mono">${b.time}</div>
         <div><div class="title">${t(b.title)}</div>
+        ${b.mod?`<div class="mod-line">${t('Modération')} : <strong>${b.mod}</strong></div>`:''}
         ${b.items?`<ul>${b.items.map(it=>`<li>${t(it)}</li>`).join('')}</ul>`:''}
         </div></div></div>`;
     });
@@ -1259,6 +1266,7 @@ function buildSearchIndex(){
     const day = t(d.dateLabel);
     [...(d.simple||[]), ...(d.closing||[])].forEach(b=>{
       if(NON_SPEAKER_BLOCKS.includes(b.title)) return;
+      if(b.mod) idx.push({day, time:b.time, meta:t('Modération')+' · '+t(b.title), name:b.mod, title:'', rtl:false, hay:normQ(b.mod+' moderation moderateur')});
       (b.items||[]).forEach(it=>{
         if(NON_SPEAKER_ITEM.test(it)) return;
         idx.push({day, time:b.time, meta:t(b.title), name:t(it), title:'', rtl:false, hay:normQ(it)});
@@ -1270,6 +1278,9 @@ function buildSearchIndex(){
     });
     (d.parallels||[]).forEach(p=>{
       if(!p.tracks) return;
+      Object.entries(p.mods||{}).forEach(([axeId,m])=>{
+        idx.push({day, time:p.time, meta:t('Modération')+' · '+t(AXES[axeId].label), name:m, title:'', rtl:false, hay:normQ(m+' moderation moderateur')});
+      });
       Object.entries(p.tracks).forEach(([axeId,sessions])=>{
         sessions.forEach(s=>{
           if(s.speaker==='Discussion et échanges') return;
