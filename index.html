@@ -309,6 +309,7 @@
   .map-card p{flex:1;}
   .map-link{display:inline-block;margin-top:14px;padding:8px 14px;border-radius:999px;background:var(--teal-deep);color:#fff;font-size:13.5px;font-weight:600;text-decoration:none;align-self:flex-start;}
   .map-link:hover{filter:brightness(1.15);}
+  .eval-links{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 4px;} .eval-links .map-link{margin-top:0;}
   .report-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-top:18px;}
   .report-card h3{font-size:18px;margin-bottom:16px;}
   .report-img{width:100%;height:auto;border-radius:10px;display:block;border:1px solid var(--line);}
@@ -442,7 +443,7 @@
   <div class="container">
     <div class="eyebrow" data-i18n="heroEyebrow">Colloque international · Tunis, Tunisie</div>
     <h1 data-i18n="heroTitle">Animation Socioculturelle et Développement Durable : <em>Défis et perspectives<br> 27-29 octobre 2026</em></h1>
-    <p class="sub" data-i18n="heroSub">Trois jours de séances plénières, sessions parallèles et ateliers réunissant chercheur·euse·s et praticien·ne·s de l'animation socioculturelle venu·e·s de plus de quinze pays.</p>
+    <p class="sub" data-i18n="heroSub">Trois jours de séances plénières, sessions parallèles et ateliers réunissant chercheur·euse·s et praticien·ne·s de l'animation socioculturelle venu·e·s de plus de douze pays.</p>
     <div class="meta-row">
       <div class="meta-item"><div class="k" data-i18n="metaDates">Dates</div><div class="v">27–29 oct. 2026</div></div>
       <div class="meta-item"><div class="k" data-i18n="metaPlace">Lieu</div><div class="v">Tunis, ISAJC</div></div>
@@ -561,6 +562,13 @@
         <p data-i18n="mapArousDesc">Ben Arous, au sud de Tunis.</p>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Centre%20culturel%20et%20sportif%2C%20Ben%20Arous%2C%20Tunisie" target="_blank" rel="noopener" data-i18n="mapOpen">Voir sur la carte ↗</a>
       </div>
+    </div>
+    <h3 class="map-head" data-i18n="evalTitle">Évaluation du colloque</h3>
+    <p class="map-sub" data-i18n="evalSub">Merci de noter chaque rubrique de 1 à 10 pour nous aider à corriger les insuffisances lors des prochaines éditions. Questionnaire en arabe, français, anglais et espagnol.</p>
+    <div class="eval-links">
+      <a class="map-link" id="evalFormLink" href="#" target="_blank" rel="noopener" style="display:none" data-i18n="evalForm">Répondre en ligne ↗</a>
+      <a class="map-link" href="Evaluation_colloque_RIA_ISAJC_2026.pdf" download data-i18n="evalPdf">Télécharger le questionnaire (PDF)</a>
+      <a class="map-link" href="Evaluation_colloque_RIA_ISAJC_2026.docx" download data-i18n="evalDocx">Télécharger le questionnaire (Word)</a>
     </div>
   </div>
 </section>
@@ -696,7 +704,7 @@ const UI = {
     navHome:"Accueil", navAxes:"Axes", navProgramme:"Programme", navReports:"Rapports", navLibrary:"Bibliothèque", navInfos:"Infos pratiques",
     heroEyebrow:"Colloque international · Tunis, Tunisie",
     heroTitle:"Animation Socioculturelle et Développement Durable : <em>Défis et perspectives<br> 27-29 octobre 2026</em>",
-    heroSub:"Trois jours de séances plénières, sessions parallèles et ateliers réunissant chercheur·euse·s et praticien·ne·s de l'animation socioculturelle venu·e·s de plus de quinze pays.",
+    heroSub:"Trois jours de séances plénières, sessions parallèles et ateliers réunissant chercheur·euse·s et praticien·ne·s de l'animation socioculturelle venu·e·s de plus de douze pays.",
     metaDates:"Dates", metaPlace:"Lieu", metaOrg:"Organisation", metaAxes:"Axes", metaAxesVal:"4 + 3 ateliers",
     ctaProgramme:"Voir le programme", ctaAxes:"Découvrir les axes", ctaRegister:"Inscription en ligne", registerLabel:"Inscription en ligne :",
     axesKicker:"Axes thématiques",
@@ -726,6 +734,7 @@ const UI = {
     infoWeatherTitle:"Météo du 26 au 30 octobre", infoWeatherDesc:"Tendance saisonnière à Tunis : environ 25–26 °C la journée et 19–20 °C la nuit, ciel le plus souvent dégagé, humidité autour de 75 %, quelques averses possibles (la saison des pluies commence en fin d'octobre). Mer à environ 23 °C. Pensez à consulter les prévisions la veille de votre départ.",
     infoDressDayTitle:"Tenue de jour", infoDressDayDesc:"Vêtements légers en coton ou en lin, tenue décontractée soignée pour les séances (chemise ou chemisier, pantalon, robe légère). Lunettes de soleil, chapeau ou casquette et crème solaire pour les pauses à l'extérieur. Prévoyez une veste fine : les salles peuvent être fraîches ou climatisées. Jeudi 29 (Carthage et Sidi Bou Saïd) : chaussures fermées confortables, le sol des sites archéologiques est irrégulier.",
     infoDressEveTitle:"Tenue du soir", infoDressEveDesc:"Les soirées sont plus fraîches : prévoyez une veste, un gilet ou un pull léger, et éventuellement un foulard. Pour le dîner de gala du mercredi 28 à 20h00 : tenue élégante (costume ou veste, robe ou tenue de ville). Un parapluie ou un imperméable léger est utile en cas d'averse.",
+    evalTitle:"Évaluation du colloque", evalSub:"Merci de noter chaque rubrique de 1 à 10 pour nous aider à corriger les insuffisances lors des prochaines éditions. Questionnaire en arabe, français, anglais et espagnol.", evalForm:"Répondre en ligne ↗", evalPdf:"Télécharger le questionnaire (PDF)", evalDocx:"Télécharger le questionnaire (Word)",
     infoMapsTitle:"Localisations", infoMapsSub:"Ouvrez chaque lieu dans votre application de cartes pour obtenir l'itinéraire.", mapOpen:"Voir sur la carte ↗",
     mapIsajcTitle:"ISAJC, lieu du colloque", mapIsajcDesc:"Institut Supérieur de l'Animation pour la Jeunesse et la Culture, Bir El Bey, Tunis. Séances plénières, axes, ateliers et posters du 27 au 29 octobre.",
     mapCiteTitle:"Cité de la Culture de Tunis", mapCiteDesc:"Avenue Mohamed V, Tunis.",
@@ -750,7 +759,7 @@ const UI = {
     navHome:"Home", navAxes:"Themes", navProgramme:"Programme", navReports:"Reports", navLibrary:"Library", navInfos:"Practical info",
     heroEyebrow:"International conference · Tunis, Tunisia",
     heroTitle:"Sociocultural Animation and Sustainable Development: <em>Challenges and Perspectives<br> 27-29 October 2026</em>",
-    heroSub:"Three days of plenary sessions, parallel sessions and workshops bringing together researchers and practitioners of sociocultural animation from more than fifteen countries.",
+    heroSub:"Three days of plenary sessions, parallel sessions and workshops bringing together researchers and practitioners of sociocultural animation from more than twelve countries.",
     metaDates:"Dates", metaPlace:"Venue", metaOrg:"Organisation", metaAxes:"Themes", metaAxesVal:"4 + 3 workshops",
     ctaProgramme:"View the programme", ctaAxes:"Discover the themes", ctaRegister:"Register online", registerLabel:"Online registration:",
     axesKicker:"Thematic strands",
@@ -780,6 +789,7 @@ const UI = {
     infoWeatherTitle:"Weather, 26–30 October", infoWeatherDesc:"Seasonal outlook for Tunis: about 25–26 °C by day and 19–20 °C at night, mostly clear skies, humidity around 75%, with a few showers possible (the rainy season starts in late October). Sea temperature about 23 °C. Please check the forecast the day before you travel.",
     infoDressDayTitle:"What to wear by day", infoDressDayDesc:"Light cotton or linen clothing, smart casual for the sessions (shirt or blouse, trousers, light dress). Sunglasses, a hat or cap and sunscreen for outdoor breaks. Bring a thin jacket, as the rooms can be cool or air-conditioned. On Thursday 29 (Carthage and Sidi Bou Saïd), wear comfortable closed shoes: the archaeological sites have uneven ground.",
     infoDressEveTitle:"What to wear in the evening", infoDressEveDesc:"Evenings are cooler: bring a jacket, cardigan or light sweater, and perhaps a scarf. For the gala dinner on Wednesday 28 at 8 pm, dress elegantly (suit or jacket, dress or smart outfit). An umbrella or a light raincoat is useful in case of showers.",
+    evalTitle:"Colloquium evaluation", evalSub:"Please rate each part of the programme from 1 to 10 to help us address any shortcomings in future editions. Questionnaire in Arabic, French, English and Spanish.", evalForm:"Answer online ↗", evalPdf:"Download the questionnaire (PDF)", evalDocx:"Download the questionnaire (Word)",
     infoMapsTitle:"Locations", infoMapsSub:"Open each place in your maps app to get directions.", mapOpen:"View on map ↗",
     mapIsajcTitle:"ISAJC, colloquium venue", mapIsajcDesc:"Higher Institute of Animation for Youth and Culture, Bir El Bey, Tunis. Plenary sessions, thematic strands, workshops and posters from 27 to 29 October.",
     mapCiteTitle:"Tunis City of Culture", mapCiteDesc:"Avenue Mohamed V, Tunis.",
@@ -804,7 +814,7 @@ const UI = {
     navHome:"الرئيسية", navAxes:"المحاور", navProgramme:"البرنامج", navReports:"التقارير", navLibrary:"المكتبة", navInfos:"معلومات عملية",
     heroEyebrow:"مؤتمر دولي · تونس، تونس",
     heroTitle:"التنشيط السوسيوثقافي والتنمية المستدامة: <em>تحديات وآفاق<br> 27-29 أكتوبر 2026</em>",
-    heroSub:"ثلاثة أيام من الجلسات العامة والجلسات الموازية وورشات العمل تجمع باحثين وممارسين في التنشيط السوسيوثقافي قادمين من أكثر من خمسة عشر بلدًا.",
+    heroSub:"ثلاثة أيام من الجلسات العامة والجلسات الموازية وورشات العمل تجمع باحثين وممارسين في التنشيط السوسيوثقافي قادمين من أكثر من اثني عشر بلدًا.",
     metaDates:"التواريخ", metaPlace:"المكان", metaOrg:"التنظيم", metaAxes:"المحاور", metaAxesVal:"4 محاور + 3 ورشات",
     ctaProgramme:"مشاهدة البرنامج", ctaAxes:"اكتشاف المحاور", ctaRegister:"التسجيل عبر الإنترنت", registerLabel:"التسجيل عبر الإنترنت:",
     axesKicker:"المحاور المواضيعية",
@@ -834,6 +844,7 @@ const UI = {
     infoWeatherTitle:"الطقس من 26 إلى 30 أكتوبر", infoWeatherDesc:"التوقعات الموسمية في تونس العاصمة: حوالي 25–26 درجة مئوية نهارًا و19–20 درجة ليلًا، وسماء صافية في الغالب، ورطوبة في حدود 75٪، مع احتمال هطول بعض الأمطار (يبدأ موسم الأمطار في أواخر أكتوبر). حرارة البحر حوالي 23 درجة. يُرجى الاطلاع على النشرة الجوية قبل السفر بيوم.",
     infoDressDayTitle:"ماذا نرتدي نهارًا", infoDressDayDesc:"ملابس خفيفة من القطن أو الكتان، وهندام أنيق غير رسمي للجلسات (قميص أو بلوزة وسروال أو فستان خفيف). نظارات شمسية وقبعة وواقٍ من الشمس لفترات الاستراحة في الهواء الطلق. احملوا سترة خفيفة لأن القاعات قد تكون باردة أو مكيّفة. يوم الخميس 29 (قرطاج وسيدي بوسعيد) يُنصح بحذاء مريح ومغلق لأن أرض المواقع الأثرية غير مستوية.",
     infoDressEveTitle:"ماذا نرتدي مساءً", infoDressEveDesc:"المساءات أبرد: احملوا سترة أو كنزة خفيفة وربما وشاحًا. لحفل العشاء يوم الأربعاء 28 على الساعة الثامنة مساءً يُرجى ارتداء لباس أنيق (بدلة أو سترة، أو فستان أو لباس رسمي). مظلة أو معطف خفيف للمطر مفيد في حال هطول الأمطار.",
+    evalTitle:"تقييم الندوة", evalSub:"نرجو تقييم كل فقرة من فقرات البرنامج بعدد من 1 إلى 10 لمساعدتنا على تدارك النقائص في الدورات القادمة. الاستمارة متوفرة بالعربية والفرنسية والإنجليزية والإسبانية.", evalForm:"الإجابة عبر الإنترنت ↗", evalPdf:"تحميل الاستمارة (PDF)", evalDocx:"تحميل الاستمارة (Word)",
     infoMapsTitle:"المواقع", infoMapsSub:"افتحوا كل موقع في تطبيق الخرائط للحصول على المسار.", mapOpen:"عرض على الخريطة ↗",
     mapIsajcTitle:"المعهد العالي للتنشيط الشبابي والثقافي، مكان الندوة", mapIsajcDesc:"المعهد العالي للتنشيط الشبابي والثقافي ببئر الباب، تونس. الجلسات العامة والمحاور والورشات والملصقات من 27 إلى 29 أكتوبر.",
     mapCiteTitle:"مدينة الثقافة بتونس", mapCiteDesc:"شارع محمد الخامس، تونس.",
@@ -858,7 +869,7 @@ const UI = {
     navHome:"Inicio", navAxes:"Ejes", navProgramme:"Programa", navReports:"Informes", navLibrary:"Biblioteca", navInfos:"Información práctica",
     heroEyebrow:"Congreso internacional · Túnez, Túnez",
     heroTitle:"Animación Sociocultural y Desarrollo Sostenible: <em>Retos y perspectivas<br> 27-29 de octubre de 2026</em>",
-    heroSub:"Tres días de sesiones plenarias, sesiones paralelas y talleres que reúnen a investigadores/as y profesionales de la animación sociocultural procedentes de más de quince países.",
+    heroSub:"Tres días de sesiones plenarias, sesiones paralelas y talleres que reúnen a investigadores/as y profesionales de la animación sociocultural procedentes de más de doce países.",
     metaDates:"Fechas", metaPlace:"Lugar", metaOrg:"Organización", metaAxes:"Ejes", metaAxesVal:"4 + 3 talleres",
     ctaProgramme:"Ver el programa", ctaAxes:"Descubrir los ejes", ctaRegister:"Inscripción en línea", registerLabel:"Inscripción en línea:",
     axesKicker:"Ejes temáticos",
@@ -888,6 +899,7 @@ const UI = {
     infoWeatherTitle:"Tiempo del 26 al 30 de octubre", infoWeatherDesc:"Tendencia estacional en Túnez: unos 25–26 °C de día y 19–20 °C de noche, cielo en general despejado, humedad en torno al 75 % y posibilidad de algún chubasco (la temporada de lluvias empieza a finales de octubre). El mar ronda los 23 °C. Consulte la previsión el día antes de viajar.",
     infoDressDayTitle:"Qué llevar de día", infoDressDayDesc:"Ropa ligera de algodón o lino, estilo informal cuidado para las sesiones (camisa o blusa, pantalón, vestido ligero). Gafas de sol, sombrero o gorra y protector solar para las pausas al aire libre. Lleve una chaqueta fina: las salas pueden estar frescas o con aire acondicionado. El jueves 29 (Cartago y Sidi Bou Said), calzado cómodo y cerrado: los sitios arqueológicos tienen suelo irregular.",
     infoDressEveTitle:"Qué llevar de noche", infoDressEveDesc:"Las noches son más frescas: lleve chaqueta, rebeca o jersey ligero, y quizá un pañuelo. Para la cena de gala del miércoles 28 a las 20:00, vestimenta elegante (traje o americana, vestido o ropa de vestir). Un paraguas o impermeable ligero es útil si llueve.",
+    evalTitle:"Evaluación del coloquio", evalSub:"Les rogamos que valoren cada apartado del programa de 1 a 10 para ayudarnos a subsanar las carencias en próximas ediciones. Cuestionario en árabe, francés, inglés y español.", evalForm:"Responder en línea ↗", evalPdf:"Descargar el cuestionario (PDF)", evalDocx:"Descargar el cuestionario (Word)",
     infoMapsTitle:"Ubicaciones", infoMapsSub:"Abra cada lugar en su aplicación de mapas para obtener la ruta.", mapOpen:"Ver en el mapa ↗",
     mapIsajcTitle:"ISAJC, sede del coloquio", mapIsajcDesc:"Instituto Superior de Animación para la Juventud y la Cultura, Bir El Bey, Túnez. Sesiones plenarias, ejes, talleres y pósteres del 27 al 29 de octubre.",
     mapCiteTitle:"Ciudad de la Cultura de Túnez", mapCiteDesc:"Avenida Mohamed V, Túnez.",
@@ -1436,6 +1448,10 @@ function initQR(){
     });
   }catch(err){ /* library unavailable offline */ }
 }
+
+/* Lien du formulaire Google d'évaluation : collez l'adresse entre les guillemets pour afficher le bouton « Répondre en ligne » */
+const EVAL_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe9JVW8qAynaqWuYcdhvCaDodhvnwOhWGXo7Kzi_jLwrL03HQ/viewform';
+(function(){ const a=document.getElementById('evalFormLink'); if(a && EVAL_FORM_URL){ a.href=EVAL_FORM_URL; a.style.display='inline-block'; } })();
 
 /* ===================== INIT ===================== */
 renderAxesGrid();
