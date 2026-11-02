@@ -108,6 +108,10 @@
   #searchInput:focus{outline:2px solid var(--teal);outline-offset:1px;width:230px;}
   .search-wrap svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;opacity:.5;}
 
+  .yt-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#c4302b;color:#fff;flex-shrink:0;text-decoration:none;}
+  .yt-link:hover{background:#a82622;}
+  .yt-link svg{width:18px;height:18px;fill:currentColor;}
+  .doc-icon.yt{background:#c4302b;}
   .lang-switch{display:flex;gap:2px;background:var(--paper-alt);border-radius:8px;padding:3px;flex-shrink:0;}
   .lang-switch button{
     border:none;background:transparent;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;
@@ -425,6 +429,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       <input id="searchInput" type="text" placeholder="Chercher un·e intervenant·e…" data-i18n-placeholder="searchPlaceholder">
     </div>
+    <a class="yt-link" href="https://www.youtube.com/@MohamedHabibKhadhraoui" target="_blank" rel="noopener" data-i18n-aria="ytAria" data-i18n-title="ytAria" aria-label="Chaîne YouTube" title="Chaîne YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg></a>
     <div class="lang-switch" id="langSwitch">
       <button data-lang="fr" class="active">FR</button>
       <button data-lang="en">EN</button>
@@ -570,6 +575,11 @@
       <a class="map-link" href="Evaluation_colloque_RIA_ISAJC_2026.pdf" download data-i18n="evalPdf">Télécharger le questionnaire (PDF)</a>
       <a class="map-link" href="Evaluation_colloque_RIA_ISAJC_2026.docx" download data-i18n="evalDocx">Télécharger le questionnaire (Word)</a>
     </div>
+    <h3 class="map-head" data-i18n="ytTitle">Chaîne YouTube</h3>
+    <p class="map-sub" data-i18n="ytSub">Retrouvez les vidéos du colloque et d'autres contenus sur la chaîne YouTube de Mohamed Habib Khadhraoui, directeur de l'ISAJC.</p>
+    <div class="eval-links">
+      <a class="map-link" href="https://www.youtube.com/@MohamedHabibKhadhraoui" target="_blank" rel="noopener" data-i18n="ytBtn">Ouvrir la chaîne YouTube ↗</a>
+    </div>
   </div>
 </section>
 
@@ -648,6 +658,12 @@
         <p data-i18n="mediaDesc">Articles de presse, photos et vidéos de cette journée.</p>
         <div class="doc-dl" data-i18n="mediaOpen">Ouvrir le dossier →</div>
       </a>
+      <a class="media-card" href="https://www.youtube.com/@MohamedHabibKhadhraoui" target="_blank" rel="noopener">
+        <div class="media-icon" style="background:#c4302b;color:#fff;"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg></div>
+        <h3 data-i18n="ytCardTitle">Chaîne YouTube</h3>
+        <p data-i18n="ytCardDesc">Vidéos du colloque et autres contenus de Mohamed Habib Khadhraoui.</p>
+        <div class="doc-dl" data-i18n="ytCardCta">Ouvrir la chaîne ↗</div>
+      </a>
     </div>
   </div>
 </section>
@@ -667,6 +683,7 @@
       <p data-i18n="footAddress">📍 Bir El Bey, Tunis, Tunisie</p>
       <p><span data-i18n="footEmailLabel">E-mail</span>&nbsp;: <a href="mailto:isajc@isajc.rnu.tn">isajc@isajc.rnu.tn</a></p>
       <p><span data-i18n="footDirectorLabel">Directeur</span>&nbsp;: <a href="mailto:mohamedhabib.khadhraoui@isajc.rnu.tn">mohamedhabib.khadhraoui@isajc.rnu.tn</a></p>
+      <p><span data-i18n="footYoutubeLabel">Chaîne YouTube</span>&nbsp;: <a href="https://www.youtube.com/@MohamedHabibKhadhraoui" target="_blank" rel="noopener">@MohamedHabibKhadhraoui</a></p>
     </div>
     <div>
       <div class="qr-frame"><div id="qrcode"></div></div>
@@ -722,6 +739,7 @@ const UI = {
     docEnDesc:"Normes éditoriales complètes pour la rédaction des articles en anglais.",
     docArTitle:"Consignes de rédaction — Arabe",
     docArDesc:"Normes éditoriales complètes pour la rédaction des articles en arabe.",
+    footYoutubeLabel:"Chaîne YouTube", ytAria:"Chaîne YouTube", ytCardTitle:"Chaîne YouTube", ytCardDesc:"Vidéos du colloque et autres contenus de Mohamed Habib Khadhraoui.", ytCardCta:"Ouvrir la chaîne ↗", ytTitle:"Chaîne YouTube", ytSub:"Retrouvez les vidéos du colloque et d\'autres contenus sur la chaîne YouTube de Mohamed Habib Khadhraoui, directeur de l\'ISAJC.", ytBtn:"Ouvrir la chaîne YouTube ↗",
     docDownload:"Télécharger le PDF ↓",
     axesDesc:"Chaque axe se tient en parallèle dans une salle dédiée du campus de l'ISAJC. Utilisez ces couleurs comme repère tout au long du programme.",
     progKicker:"Programme complet", progTitle:"Jour par jour, heure par heure",
@@ -777,6 +795,7 @@ const UI = {
     docEnDesc:"Complete editorial guidelines for manuscripts submitted in English.",
     docArTitle:"Editorial Guidelines — Arabic",
     docArDesc:"Complete editorial guidelines for articles written in Arabic.",
+    footYoutubeLabel:"YouTube channel", ytAria:"YouTube channel", ytCardTitle:"YouTube channel", ytCardDesc:"Colloquium videos and other content by Mohamed Habib Khadhraoui.", ytCardCta:"Open the channel ↗", ytTitle:"YouTube channel", ytSub:"Watch the colloquium videos and other content on the YouTube channel of Mohamed Habib Khadhraoui, Director of ISAJC.", ytBtn:"Open the YouTube channel ↗",
     docDownload:"Download PDF ↓",
     axesDesc:"Each theme runs in parallel in a dedicated room on the ISAJC campus. Use these colours as a guide throughout the programme.",
     progKicker:"Full programme", progTitle:"Day by day, hour by hour",
@@ -832,6 +851,7 @@ const UI = {
     docEnDesc:"المعايير التحريرية الكاملة للمقالات المقدمة باللغة الإنجليزية.",
     docArTitle:"التوجيهات التحريرية — بالعربية",
     docArDesc:"المعايير التحريرية الكاملة للمقالات المكتوبة باللغة العربية.",
+    footYoutubeLabel:"قناة يوتيوب", ytAria:"قناة يوتيوب", ytCardTitle:"قناة يوتيوب", ytCardDesc:"فيديوهات الندوة ومحتويات أخرى على قناة مدير المعهد.", ytCardCta:"فتح القناة ↗", ytTitle:"قناة يوتيوب", ytSub:"شاهدوا فيديوهات الندوة ومحتويات أخرى على قناة يوتيوب الخاصة بمدير المعهد العالي للتنشيط الشبابي والثقافي ببئر الباي.", ytBtn:"فتح قناة يوتيوب ↗",
     docDownload:"تحميل الملف PDF ↓",
     axesDesc:"يُعقد كل محور بالتوازي في قاعة مخصصة داخل حرم المعهد العالي للتنشيط. استخدموا هذه الألوان كدليل طوال البرنامج.",
     progKicker:"البرنامج الكامل", progTitle:"يومًا بيوم، ساعة بساعة",
@@ -887,6 +907,7 @@ const UI = {
     docEnDesc:"Normas editoriales completas para manuscritos presentados en inglés.",
     docArTitle:"Normas Editoriales — Árabe",
     docArDesc:"Normas editoriales completas para artículos redactados en árabe.",
+    footYoutubeLabel:"Canal de YouTube", ytAria:"Canal de YouTube", ytCardTitle:"Canal de YouTube", ytCardDesc:"Vídeos del coloquio y otros contenidos de Mohamed Habib Khadhraoui.", ytCardCta:"Abrir el canal ↗", ytTitle:"Canal de YouTube", ytSub:"Encuentre los vídeos del coloquio y otros contenidos en el canal de YouTube de Mohamed Habib Khadhraoui, director del ISAJC.", ytBtn:"Abrir el canal de YouTube ↗",
     docDownload:"Descargar PDF ↓",
     axesDesc:"Cada eje se desarrolla en paralelo en una sala dedicada del campus del ISAJC. Utilicen estos colores como referencia a lo largo del programa.",
     progKicker:"Programa completo", progTitle:"Día a día, hora a hora",
@@ -1012,6 +1033,14 @@ function applyStaticI18n(){
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
     const key = el.getAttribute('data-i18n-placeholder');
     if(dict[key]!==undefined) el.setAttribute('placeholder', dict[key]);
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-aria');
+    if(dict[key]!==undefined) el.setAttribute('aria-label', dict[key]);
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-title');
+    if(dict[key]!==undefined) el.setAttribute('title', dict[key]);
   });
 }
 
